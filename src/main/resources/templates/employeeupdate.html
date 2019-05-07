@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form  th:action="@{/employee/update/{id}(id=${employee.getId()})}" method="post" th:object="${employee}">
+        <input   name="name" type="text"  th:value="${employee.getName()}" />
+        <input   name="age" type="text" th:value="${employee.getAge()}" />
+        <input  type="submit" value="update"/>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<p>------------------</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>chon</th>
+
+    </tr>
+    <th><a th:href="@{/employee/add}">them</a></th>
+    <tr th:each="emp : ${employees}">
+        <th th:text="${emp.getId()}" ></th>
+        <th th:text="${emp.getName()}"></th>
+        <th th:text="${emp.getAge()}"></th>
+        <th><a th:href="@{/employee/remove/{id}(id=${emp.getId()})}">xoa</a></th>
+        <th><a th:href="@{/employee/update/{id}(id=${emp.getId()})}">update</a></th>
+    </tr>
+</table>
+    <p>-------</p>
+    <form action="" method="post">
+        <div>dang nhap</div>
+       Email <input name="email" type="text"/>
+            PassWord<input name="password" type="text">
+        <input type="button" th:value="Login"/>
+    </form>
+</body>
+</html>
